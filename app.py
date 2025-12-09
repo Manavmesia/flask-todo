@@ -28,7 +28,7 @@ def add():
         db.session.add(todo)
         db.session.commit()
     allTodo = Todo.query.all()
-    return render_template('index.html allTodo=allTodo)
+    return render_template('index.html', allTodo=allTodo)
 
 @app.route('/show')
 def show():
@@ -36,7 +36,7 @@ def show():
     print(allTodo)
     return 'This is a product page'
 
-@app.route('/edit/<int:srno>', methods=["GET", "POST"])
+@app.route('/edit/<int:srno>', methods=["GET "POST"])
 def edit(srno):
     if request.method=='POST':
         title = request.form['title']
