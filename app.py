@@ -17,7 +17,7 @@ class Todo(db.Model):
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     
     def __repr__(self):
-        return f"{self.srno} - {self.title}"
+        return f"{self.srno} - {self.title
 
 @app.route('/', methods=["GET", "POST"])
 def add():
@@ -36,7 +36,7 @@ def show():
     print(allTodo)
     return 'This is a product page'
 
-@app.route('/edit/<int:srno>', methods=["GET "POST"])
+@app.route('/edit/<int:srno>', methods=["GET", "POST"])
 def edit(srno):
     if request.method=='POST':
         title = request.form['title']
